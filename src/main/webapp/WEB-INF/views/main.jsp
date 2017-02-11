@@ -9,6 +9,16 @@
 <body>
 
 <h1>main</h1>
+<br>
+<br>
+<a href="<%=request.getContextPath() %>/shop">shop</a>
+<br>
+<a href="<%=request.getContextPath() %>/">coming soon</a>
+<br>
+<a href="<%=request.getContextPath() %>/">back</a>
+
+
+
 
 </body>
 </html>

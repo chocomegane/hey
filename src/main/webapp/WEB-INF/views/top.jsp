@@ -5,7 +5,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 	
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<!DOCTYPE html >
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -20,19 +20,20 @@ modelAttribute ：　formクラスにパラメータを送る動作　正規表�
 
 action :　通るコントローラの指定
 
- <form:form modelAttribute = "" action=""></form:form>  --%>
+ <form:form modelAttribute = "使用するformを指定する" action="遷移するためのコントローラのパス"></form:form> 
  
+ modelAttribute→事前にコントローラでフォームをマッピングする必要がある
+ 
+  --%>
 <form:form modelAttribute="userForm" action="${pageContext.request.contextPath}/main">
 
-ユーザID　:　 <form:textarea path = "userId"></form:textarea><br>
-パスワード　: <form:textarea path = "password"></form:textarea>
+ユーザID　:　 <form:input path = "userId"></form:input><br>
+パスワード　: <form:password path = "password"></form:password>
 
 <input type="submit" value="login"></input>
-
-
-
 </form:form>
+<br>
 
-
+<a href="<%=request.getContextPath() %>/registerUser">新規登録はこちら</a>
 </body>
 </html>
