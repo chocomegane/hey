@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.example</groupId>
-	<artifactId>ecommerce-springC</artifactId>
+	<artifactId>ec-site</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>    <!-- warFail作成用 -->
 	<!-- <packaging>jar</packaging> -->
-	<name>ecommerce-springC</name>
+	<name>ec-site</name>
 	<description>Demo project for Spring Boot</description>
 
 	<parent>
@@ -38,16 +38,8 @@
 			<scope>provided</scope> </dependency> -->
 		<!--/////////////////////////////////////////////////// -->
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-security -->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+
 		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-taglibs -->
-		<dependency>
-			<groupId>org.springframework.security</groupId>
-			<artifactId>spring-security-taglibs</artifactId>
-		</dependency>
 		<dependency>
 			<groupId>org.postgresql</groupId>
 			<artifactId>postgresql</artifactId>
@@ -99,7 +91,7 @@
 		</dependency>
 	</dependencies>
 	<build>
-		<finalName>ecommerce-springC-sawamura</finalName>        <!-- ファイル名 -->
+		<finalName>ec-site-sawamura</finalName>        <!-- ファイル名 -->
 		<plugins>
 			<plugin>
 				<groupId>org.springframework.boot</groupId>

@@ -2,7 +2,7 @@
  * 映画のリストをとってくるjson
  */
 
-function createHtml(json) {
+function createHtml(json, contextPath) {
 
 	var htmlSource = "<br>";
 	for (var i = 0; i < json.length; i++) {
@@ -51,7 +51,7 @@ $(function() {
 
 		var htmlSource = "";
 
-		htmlSource = createHtml(json);
+		htmlSource = createHtml(json, contextPath);
 
 		htmlSource = '1ページ<br><table class="table table-striped"><tbody><tr>'
 				+ htmlSource + '</tr></tbody></table>';
@@ -61,19 +61,47 @@ $(function() {
 	});
 });
 
+
+$(function() {
+	var contextPath = $("#contextPath").val();
+
+	$('.search')
+			.on('click',
+					function() {
+
+						var searchNum = $(this).val();
+						
+						searchNum = searchNum - 1;
+
+						$.getJSON(
+										contextPath + '/json/exe/search?searchNum='
+												+ searchNum +'search=' + search,
+										function(json) {
+											var htmlSource = "";
+
+											htmlSource = htmlSource
+													+ createHtml(json);
+
+											htmlSource = page
+													+ 1
+													+ 'ページ<br><table class="table table-striped"><tbody><tr>'
+													+ htmlSource
+													+ '</tr></tbody></table>';
+											$("#dvd").html(htmlSource);
+
+										});
+
+					});
+
+});
 $(function() {
 	var contextPath = $("#contextPath").val();
 
 	$('.pagings')
-			.on(
-					'click',
-					function() {
-
+			.on('click',function() {
 						var page = $(this).val();
 						page = page - 1;
-
-						$
-								.getJSON(
+						$.getJSON(
 										contextPath + '/json/exe/paging?page='
 												+ page,
 										function(json) {
@@ -94,3 +122,33 @@ $(function() {
 					});
 
 });
+//////////////////////////////検索結果のjson
+$('#searchCinemaPrice')
+.change(function() {
+	var contextPath = $("#contextPath").val();
+			var price = $(this).val();
+			$.getJSON(
+							contextPath + '/json/exe/searchCinemaPrice?price='
+									+ price,
+							function(json) {
+								
+								var htmlSource = "";
+
+								htmlSource = htmlSource
+										+ createHtml(json, contextPath);
+
+								htmlSource = page
+										+ 1
+										+ 'ページ<br><table class="table table-striped"><tbody><tr>'
+										+ htmlSource
+										+ '</tr></tbody></table>';
+								$("#dvd").html(htmlSource);
+
+							});
+
+		});
+
+
+
+
+
