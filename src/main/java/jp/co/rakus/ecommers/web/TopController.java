@@ -11,9 +11,6 @@ public class TopController {
 	
 	@RequestMapping("/")
 	public String index(){
-		
-		
-		
 		return "top";
 	}
 	
