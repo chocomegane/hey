@@ -7,6 +7,45 @@
 <title>Insert title here</title>
 </head>
 <body>
+<h1>新規登録</h1>
+
+<table>
+<tr>
+<td>
+ニックネーム
+</td>
+<td>
+<input type="text"/>
+</td>
+</tr>
+<tr>
+<td>
+email
+</td>
+<td>
+<input type="text"/>
+<td>
+</tr>
+<tr>
+<td>
+password
+</td>
+<td>
+<input type="text"/>
+<td>
+</tr>
+<tr>
+<td>
+password確認
+</td>
+<td>
+<input type="text"/>
+<td>
+</tr>
+
+</table>
+
+<a href="<%= request.getContextPath() %>/" >back</a>
 
 </body>
 </html>
