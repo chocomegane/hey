@@ -25,15 +25,15 @@ action :　通るコントローラの指定
  modelAttribute→事前にコントローラでフォームをマッピングする必要がある
  
   --%>
-<form:form modelAttribute="userForm" action="${pageContext.request.contextPath}/main">
+<form:form modelAttribute="customerForm" action="${pageContext.request.contextPath}/main">
 
-ユーザID　:　 <form:input path = "userId"></form:input><br>
-パスワード　: <form:password path = "password"></form:password>
+name　:　 <form:input path = "name"></form:input><br>
+password　: <form:password path = "password"></form:password>
 
 <input type="submit" value="login"></input>
 </form:form>
 <br>
 
-<a href="<%=request.getContextPath() %>/registerUser">新規登録はこちら</a>
+<a href="<%=request.getContextPath() %>/registerCustomer">新規登録はこちら</a>
 </body>
 </html>

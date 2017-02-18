@@ -7,12 +7,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MainController {
 	//フォーム初期化
-	UserForm setupForm() {
-	    return new UserForm();
+	CustomerForm setupForm() {
+	    return new CustomerForm();
 	}
 	
 	@RequestMapping("/main")	
-	public String index(@ModelAttribute("userForm") UserForm form , BindingResult result ){
+	public String index(@ModelAttribute("userForm") CustomerForm form , BindingResult result ){
 		return "main";
 	}
 	

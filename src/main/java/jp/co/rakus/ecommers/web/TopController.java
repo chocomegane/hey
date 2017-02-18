@@ -11,7 +11,7 @@ public class TopController {
 		
 	
 	@RequestMapping("/")
-	public String index(@ModelAttribute("userForm") UserForm form ){
+	public String index(@ModelAttribute("customerForm") CustomerForm form ){
 		return "top";
 	}
 	
