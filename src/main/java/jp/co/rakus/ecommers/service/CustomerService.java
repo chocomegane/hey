@@ -9,9 +9,16 @@ import jp.co.rakus.ecommers.repository.CustomerRepository;
 @Service
 public class CustomerService {
 	
+	/**
+	 * インスタンス化　依存性注入
+	 */
 	@Autowired
 	private CustomerRepository repository;
 	
+	/**
+	 * 顧客情報登録
+	 * @param customer
+	 */
 	public void insertCustomer(Customer customer){
 		repository.insertCustomer(customer);		
 	}
